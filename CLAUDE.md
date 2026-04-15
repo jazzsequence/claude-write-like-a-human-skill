@@ -6,11 +6,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A Claude Code skill that instructs Claude to write in Chris Reynolds' personal voice (jazzsequence.com) while avoiding AI writing anti-patterns catalogued by Wikipedia's research on AI-generated text. The skill combines a negative constraint set (what not to do) with a positive voice model (how Chris actually writes).
 
-The primary artifact is `write-like-a-human.md` — the skill prompt file.
+The primary artifact is `SKILL.md` — the skill prompt file. Plugin metadata lives in `.claude-plugin/`.
 
 ## Skill File Format
 
-Claude Code skills are markdown files with YAML frontmatter:
+Claude Code skills are directories containing a `SKILL.md` file with YAML frontmatter:
 
 ```yaml
 ---
@@ -21,12 +21,16 @@ description: One-line description shown in skill picker
 
 The body is a prompt that gets injected into the conversation when the skill is invoked. Write it as direct instructions to Claude, not documentation about Claude.
 
+The `.claude-plugin/` directory contains two JSON files:
+- `plugin.json` — name, description, version, author
+- `marketplace.json` — GitHub source info used by the installer to register the skill in `settings.json`
+
 ## Updating the Voice Model
 
 The writing style section of `write-like-a-human.md` is derived from analysis of posts at `next.jazzsequence.com`. When updating:
 
 - Pull new writing samples from `next.jazzsequence.com/posts/[slug]` — the headless Next.js frontend for the site
-- Do **not** use AI-written posts as style examples (e.g., the MCP integration post was written by AI)
+- Do **not** use AI-written posts as style examples (e.g., `teaching-an-ai-to-read-my-website-over-mcp` was written by AI)
 - Look for posts where the voice is most unguarded — personal essays and opinion pieces over technical walkthroughs
 - The anti-patterns section tracks Wikipedia's evolving list at `https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing` — the specific vocabulary words change as AI models evolve
 
@@ -40,4 +44,4 @@ The writing style section of `write-like-a-human.md` is derived from analysis of
 
 ## Installing the Skill
 
-Copy `write-like-a-human.md` to `~/.claude/skills/` to make it available as `/write-like-a-human` in Claude Code sessions.
+Run `install.sh` to clone the repo to `~/.claude/skills/write-like-a-human/` and register it in `~/.claude/settings.json`. Restart Claude Code after installing — skills are loaded at session startup.

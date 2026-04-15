@@ -24,7 +24,7 @@ cd claude-write-like-a-human-skill
 ./install.sh
 ```
 
-Both options copy `write-like-a-human.md` into `~/.claude/skills/`.
+Both options clone the repo into `~/.claude/skills/write-like-a-human/` and register it in `~/.claude/settings.json`. Restart Claude Code after installing.
 
 ## Usage
 

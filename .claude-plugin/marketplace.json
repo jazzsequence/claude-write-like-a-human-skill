@@ -1,0 +1,23 @@
+{
+  "name": "write-like-a-human",
+  "owner": {
+    "name": "Chris Reynolds"
+  },
+  "plugins": [
+    {
+      "name": "write-like-a-human",
+      "source": {
+        "source": "github",
+        "repo": "jazzsequence/claude-write-like-a-human-skill"
+      },
+      "description": "Write content in Chris Reynolds' personal voice — casual, direct, irreverent — while actively avoiding AI writing patterns identified by Wikipedia's style research.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Chris Reynolds"
+      },
+      "homepage": "https://github.com/jazzsequence/claude-write-like-a-human-skill",
+      "repository": "https://github.com/jazzsequence/claude-write-like-a-human-skill",
+      "keywords": ["writing", "voice", "style", "ai-patterns", "content"]
+    }
+  ]
+}

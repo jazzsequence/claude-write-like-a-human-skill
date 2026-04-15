@@ -1,0 +1,8 @@
+{
+  "name": "write-like-a-human",
+  "description": "Write content in Chris Reynolds' personal voice while avoiding AI writing anti-patterns",
+  "version": "1.0.0",
+  "author": {
+    "name": "Chris Reynolds"
+  }
+}
